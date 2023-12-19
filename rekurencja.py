@@ -84,10 +84,38 @@ def nwd_i(a,b):
         a,b = b,a%b
     return a
 
-print("nwd"+nwd_i(25,70))
+print("nwd",nwd_i(25,70))
 
 
 def nwd_r(a,b):
+    if b==0:
+        return a
+    else:
+        return nwd_r(b,a%b)
+
+print("nwd",nwd_r(25,70))
 
 
 #konwersjapomiędzy systemami iteracyjnie i rekurencyjnie
+
+def na_dziesietne(liczba_tekstowo,system):
+    wynik =0
+    potega =1
+    for cyferka in liczba_tekstowo[::-1]:
+        wynik = wynik + int(cyferka,system)*potega
+        potega = potega*system
+
+    return wynik
+
+print(na_dziesietne("1100",2))
+print(na_dziesietne("23",8))
+print(na_dziesietne("A2",16))
+
+def z_dziesietnego(liczba,system):
+    wynik = ""
+    while liczba>0:
+        cyfra = liczba%system
+        wynik = str(cyfra) +wynik
+        liczba = liczba//system
+    return wynik
+print(z_dziesietnego(12,2))
