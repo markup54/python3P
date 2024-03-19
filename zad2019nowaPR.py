@@ -66,16 +66,16 @@ def nwd_lepiej(a,b):
         """
     return a
 
-print(nwd_lepiej(0,65))
+#print(nwd_lepiej(0,65))
 
-ciag_liczb = [0]
+ciag_liczb = [1]
 
 nwd_wartosc = nwd(wszystkie_liczby[0],wszystkie_liczby[1])
-for i in range(2,len(ciag_liczb)):
+for i in range(2,len(wszystkie_liczby)):
     if nwd_wartosc>1:
         ciag_liczb.append(ciag_liczb[-1]+1)
         nwd_wartosc = nwd(nwd_wartosc,wszystkie_liczby[i])
     else:
-        ciag_liczb.append(0)
+        ciag_liczb.append(1)
         nwd_wartosc = nwd(wszystkie_liczby[i-1],wszystkie_liczby[i])
 print(max(ciag_liczb))
