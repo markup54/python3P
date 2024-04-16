@@ -29,3 +29,26 @@ for i in range(ile_ciagow_naj):
     ciagi = ciagi [indeks_konca+2:]
     liczby = liczby [indeks_konca+2:]
 
+
+#najdluzszyciag liczb parzystych w liscie liczby2
+
+ciagi =[0]
+for element in liczby2:
+    if element%2 == 0:
+        ciagi.append(ciagi[-1]+1)
+    else:
+        ciagi.append(0)
+ciagi.remove(0)
+print(liczby2)
+dl = max(ciagi)
+print("najdłuższy ciąg ma dł "+str(dl))
+
+
+ile_ciagow_naj = ciagi.count(dl)
+for i in range(ile_ciagow_naj):
+    indeks_konca = ciagi.index(dl)
+    print(liczby2[indeks_konca-dl+1:indeks_konca+1])
+    ciagi = ciagi [indeks_konca+2:]
+    liczby2 = liczby2[indeks_konca+2:]
+
+
